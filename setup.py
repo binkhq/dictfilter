@@ -7,7 +7,7 @@ setuptools.setup(
     name='dictfilter',
     version='1.2.1',
     author='Chris Latham',
-    author_email='cl@bink.com',
+    author_email='opensource@bink.com',
     description='Filter dictionaries based on a list of field names.',
     long_description=long_description,
     long_description_content_type='text/markdown',
