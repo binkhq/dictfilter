@@ -38,13 +38,6 @@ Register the dictfilter middleware in `settings.py`:
 ```python
 MIDDLEWARE = [
     ...
-    'dictfilter.django.middleware.dictfilter_middleware',
-]
-```
-or
-```python
-MIDDLEWARE = [
-    ...
     'dictfilter.django.middleware.DictFilterMiddleware',
 ]
 ```

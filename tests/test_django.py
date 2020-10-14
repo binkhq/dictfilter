@@ -1,4 +1,4 @@
-from dictfilter.django.middleware import dictfilter_middleware
+from dictfilter.django.middleware import DictFilterMiddleware
 
 
 class Request:
@@ -28,7 +28,7 @@ def test_middleware_with_fields():
             'd': 'unwanted',
         })
 
-    middleware = dictfilter_middleware(get_response)
+    middleware = DictFilterMiddleware(get_response)
 
     request = Request(get={
         'fields': 'a,b,c',
@@ -54,7 +54,7 @@ def test_middleware_with_asterisk():
             'd': 'another',
         })
 
-    middleware = dictfilter_middleware(get_response)
+    middleware = DictFilterMiddleware(get_response)
 
     request = Request(get={
         'fields': '*',
@@ -81,7 +81,7 @@ def test_middleware_with_no_fields():
             'd': 'another',
         })
 
-    middleware = dictfilter_middleware(get_response)
+    middleware = DictFilterMiddleware(get_response)
 
     request = Request(get={})
     response = middleware(request)
