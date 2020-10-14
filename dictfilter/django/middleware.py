@@ -1,17 +1,20 @@
 from dictfilter import query
 
 
-def dictfilter_middleware(get_response):
-    def middleware(request):
-        fields_param = request.GET.get('fields')
+class DictFilterMiddleware(object):
+    def __init__(self, get_response=None):
+        self.get_response = get_response
+        super().__init__()
 
-        response = get_response(request)
+    def __call__(self, request):
+        response = self.get_response(request)
+        fields_param = request.GET.get("fields")
 
         if 200 <= response.status_code < 300:
-            if not fields_param or fields_param == '*':
+            if not fields_param or fields_param == "*":
                 query_fields = None
             else:
-                query_fields = fields_param.split(',')
+                query_fields = fields_param.split(",")
 
             if query_fields is not None:
                 filtered_data = query(response.data, query_fields)
@@ -22,5 +25,3 @@ def dictfilter_middleware(get_response):
                 response.render()
 
         return response
-
-    return middleware
