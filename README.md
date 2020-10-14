@@ -41,5 +41,12 @@ MIDDLEWARE = [
     'dictfilter.django.middleware.dictfilter_middleware',
 ]
 ```
+or
+```python
+MIDDLEWARE = [
+    ...
+    'dictfilter.django.middleware.DictFilterMiddleware',
+]
+```
 
 By default, every 2xx series response will be filtered based on a comma-separated `fields` parameter in the query string.
