@@ -20,7 +20,7 @@ jobs:
         - name: Install setuptools and 
           run: python -m pip install --upgrade setuptools wheel
         - name: Build a binary wheel and a source tarball
-          run: python setup.py build sdist bdist
+          run: python setup.py build sdist bdist_wheel
 
         - name: Publish distribution 📦 to PyPI
           if: startsWith(github.ref, 'refs/tags')
