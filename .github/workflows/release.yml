@@ -1,3 +1,12 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - "*"
+
 jobs:
     build-n-publish:
       name: Build and publish
