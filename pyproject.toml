@@ -1,0 +1,23 @@
+[project]
+name = "dictfilter"
+version = "================================================"
+description = "Filter dictionaries based on a list of field names."
+authors = ["Chris Latham <opensource@bink.com>"]
+license = "MIT"
+readme = "README.md"
+python = "^3.6"
+repository = "https://github.com/binkhq/dictfilter"
+keywords = ["dictfilter", "django"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[build-system]
+requires = [
+    "setuptools >= 35.0.2",
+    "setuptools_scm >= 4.0.0, <5"
+]
+build-backend = "setuptools.build_meta"
+
