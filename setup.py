@@ -5,17 +5,24 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='dictfilter',
-    version='2.0.0',
+    use_scm_version={
+        'tag_regex': r'^(?P<prefix>v)?(?P<version>[^\+]+)$',
+        'write_to': 'dictfilter/version.py'
+    },
     author='Chris Latham',
     author_email='opensource@bink.com',
     description='Filter dictionaries based on a list of field names.',
+    license="MIT",
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/binkhq/dictfilter',
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(include=['dictfilter']),
     classifiers=(
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ),
+    setup_requires = [
+        'setuptools-scm==4.1.2'
+    ]
 )

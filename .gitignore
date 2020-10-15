@@ -6,3 +6,5 @@ dist
 htmlcov
 __pycache__
 .vscode
+.eggs
+dictfilter/version.py
